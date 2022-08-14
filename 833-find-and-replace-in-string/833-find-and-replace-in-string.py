@@ -9,14 +9,11 @@ class Solution:
         
         index = 0
         while(index < len(s)):
-            
-            print("Index", index)
             if(index not in sm):
                 f += s[index]
                 index += 1
                 continue
             str = s[index:index+len(sm[index])]
-            print(str)
             if(str == sm[index]):
                 f += tm[index]
                 index = index + len(sm[index])
