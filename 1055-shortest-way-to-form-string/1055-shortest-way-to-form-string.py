@@ -9,9 +9,6 @@ class Solution:
                 i += 1
             j += 1
      
-        # If i reaches end of s1,that mean we found all
-        # characters of s1 in s2,
-        # so s1 is subsequence of s2, else not
         return i == n
     
     def shortestWay(self, source: str, target: str) -> int:
