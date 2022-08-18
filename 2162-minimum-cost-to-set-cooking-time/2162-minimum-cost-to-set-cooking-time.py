@@ -33,19 +33,16 @@ class Solution:
             timeConfigurations.append(self.createTimeArray(minutes, seconds))
             
             
-        print(timeConfigurations)
         minCost = float("inf")
         
         for configuration in timeConfigurations:
             currentPosition = startAt
             cost = 0
             for unit in configuration:
-                # print(unit)
                 if(currentPosition != unit):
                     currentPosition = unit
                     cost += moveCost
                 cost += pushCost
-            # print(configuration, cost)
             if(cost < minCost):
                 minCost = cost
                 
