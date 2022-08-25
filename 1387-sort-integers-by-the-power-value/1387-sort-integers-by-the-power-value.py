@@ -22,6 +22,5 @@ class Solution:
             power = self.calculatePower(num)
             numPowerList.append((num,power))
         finalList = sorted(numPowerList, key=lambda x: x[1])
-        print(finalList)
         
         return finalList[k-1][0]
