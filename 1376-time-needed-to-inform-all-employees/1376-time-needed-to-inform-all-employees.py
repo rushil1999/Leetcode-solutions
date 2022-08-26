@@ -22,13 +22,11 @@ class Solution:
                 orgMap[manager[i]] = [i]
             else:
                 orgMap[manager[i]].append(i)
-        # print(orgMap)
         timeMap[headID] = 0
         self.informEmployees(headID, timeMap, informTime,orgMap)
         maxTime = 0
         for empId in timeMap:
             maxTime = max(timeMap[empId], maxTime)
-        # print(timeMap)
         return maxTime
         
         
