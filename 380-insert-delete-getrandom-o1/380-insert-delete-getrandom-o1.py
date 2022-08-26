@@ -1,27 +1,33 @@
 class RandomizedSet:
 
     def __init__(self):
-        self.store = {}
+        self.indexMap = {}
+        self.keyList = []
     
     def insert(self, val: int) -> bool:
-        if val not in self.store:
-            self.store[val] = True
+        if val not in self.indexMap:
+            self.keyList.append(val)
+            self.indexMap[val] = len(self.keyList)-1
             return True
         else:
             return False
 
     def remove(self, val: int) -> bool:
-        if(val not in self.store):
+        if(val not in self.indexMap):
             return False
         else:
-            del self.store[val]
+            index = self.indexMap[val]
+            self.keyList.remove(val)
+            del self.indexMap[val]
             return True
 
     def getRandom(self) -> int:
-        randomIndex = random.choice(range(0, len(self.store)))
-        for index, key in enumerate(self.store):
-            if(index == randomIndex):
-                return key
+        randomNum = random.choice(self.keyList)
+        # for index, key in enumerate(self.store):
+        #     if(index == randomIndex):
+        #         return key
+        
+        return randomNum
             
 
 
