@@ -11,12 +11,10 @@ class Node:
 class Solution:
     
     def func(self, node):
-        # print(node.val)
         ptr = node
         while((ptr and ptr.next != None) or (ptr and ptr.child!= None)):
             if(ptr.child != None):
                 [childHead, childTail] = self.func(ptr.child)
-                print(childHead.val)
                 currentNext = ptr.next
                 if(ptr.next != None):
                     currentNext.prev = childTail 
