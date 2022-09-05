@@ -8,7 +8,7 @@ class BrowserHistory:
         self.urls = self.urls[0:self.currentIndex+1]
         self.urls.append(url)
         self.currentIndex = len(self.urls)-1
-        print(self.urls)
+        # print(self.urls)
         return None
 
     def back(self, steps: int) -> str:
