@@ -10,9 +10,12 @@ class Solution:
                 m[st] = True
                 return
             
-            func(st[1:len(st)],m)
-            func(st[0:len(st)-1],m)
-            func(st[1:len(st)-1],m)
+            if(st[1:len(st)] not in m):
+                func(st[1:len(st)],m)
+            if(st[0:len(st)-1] not in m):
+                func(st[0:len(st)-1],m)
+            if(st[1:len(st)-1] not in m):
+                func(st[1:len(st)-1],m)
             m[st] = True
         
         func(s, m)
