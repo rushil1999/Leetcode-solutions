@@ -8,14 +8,14 @@ class Solution:
             child = pid[index]
             if(parent == 0):
                 root = child
-                print("Root", root)
+                # print("Root", root)
                 continue            
             if(parent not in parentChildMap):
                 parentChildMap[parent] = [child]
             else:
                 parentChildMap[parent].append(child)
         
-        print(parentChildMap)
+        # print(parentChildMap)
         
         
         
@@ -23,13 +23,13 @@ class Solution:
             stack = [(root, True)]
         else:
             stack = [(root, False)]
-        print("Stack Initialized", stack)
+        # print("Stack Initialized", stack)
         killed = []
         
         while(len(stack )> 0):
             top = stack[0]
             stack = stack[1:len(stack)]
-            print(top[0])
+            # print(top[0])
             if(top[1] == False and top[0] != kill):
                 killFlag = False
             else:
