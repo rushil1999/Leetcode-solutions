@@ -16,11 +16,10 @@ class TimeMap:
         
         l, r = 0, len(arr)-1
         val = 0
-        # print("Store ", self.store, timestamp)
         while(l<=r):
             
             mid = (l+r)//2
-            print(timestamp, arr[mid])
+            # print(timestamp, arr[mid])
             if(timestamp == arr[mid][1]):
                 return arr[mid][0]
             elif(timestamp > arr[mid][1]):
