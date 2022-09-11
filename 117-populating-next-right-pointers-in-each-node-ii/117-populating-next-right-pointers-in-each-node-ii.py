@@ -22,9 +22,7 @@ class Solution:
     def connect(self, node: 'Node') -> 'Node':
         if(node == None):
             return None
-        # print(node.val)
         childNext = self.getRightForChild(node.next)
-        # print(node.val, node.next, childNext)
         if(node.right != None):
             node.right.next = childNext
             self.connect(node.right)
