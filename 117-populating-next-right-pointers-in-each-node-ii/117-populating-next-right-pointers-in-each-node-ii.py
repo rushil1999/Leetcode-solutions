@@ -24,7 +24,7 @@ class Solution:
             return None
         # print(node.val)
         childNext = self.getRightForChild(node.next)
-        print(node.val, node.next, childNext)
+        # print(node.val, node.next, childNext)
         if(node.right != None):
             node.right.next = childNext
             self.connect(node.right)
