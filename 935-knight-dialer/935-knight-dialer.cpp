@@ -33,14 +33,14 @@ public:
             for(j=0;j<10;j++){
                 for(k =0;k<m[j].size();k++){
                     // cout<<j<<" "<<m[j][k]<<"\n";
-                    dp[i][j] = (dp[i][j]%mod + dp[i-1][m[j][k]]%mod) %mod;
+                    dp[i][j] = (dp[i][j]+ dp[i-1][m[j][k]]) %mod;
                 }
             }
         }
         long long int total = 0;
         for(i=0;i<10;i++){
             // cout<<i<<" "<<dp[n][i]<<"\n";
-            total += dp[n][i]%mod ;
+            total += dp[n][i] ;
         }
         
         return (total%mod);
