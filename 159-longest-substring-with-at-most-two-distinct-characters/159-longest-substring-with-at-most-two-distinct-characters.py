@@ -7,14 +7,9 @@ class Solution:
         while(right < len(s)):
             if(len(countMap) == 2):
                 if(s[right] not in countMap):
-                    keys = list(countMap.keys())
-                    if(countMap[keys[0]] <= countMap[keys[1]]):
-                        leftIncrement = countMap[keys[0]] + 1
-                        del countMap[keys[0]]
-                        countMap[s[right]] = right
-                    else:
-                        leftIncrement = countMap[keys[1]] + 1
-                        del countMap[keys[1]]
+                    index = min(countMap.values())
+                    leftIncrement = index + 1
+                    del countMap[s[index]]
                     left = leftIncrement
                     
             countMap[s[right]] = right
