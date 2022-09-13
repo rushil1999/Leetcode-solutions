@@ -1,8 +1,5 @@
 class Solution {
 public:
-    
-    
-    
     int knightDialer(int n) {
         int dp[n+1][10];
         long long int mod = 1000000007;
@@ -33,7 +30,7 @@ public:
             for(j=0;j<10;j++){
                 for(k =0;k<m[j].size();k++){
                     // cout<<j<<" "<<m[j][k]<<"\n";
-                    dp[i][j] = (dp[i][j]+ dp[i-1][m[j][k]]) %mod;
+                    dp[i][m[j][k]] = (dp[i][m[j][k]]+ dp[i-1][j]) %mod;
                 }
             }
         }
