@@ -23,7 +23,6 @@ class Solution:
                 if(i+1<rows):
                     neighbours[board[i+1][j]]+= 1
                 
-                print(i, j, board[i][j],neighbours)
                 if(neighbours[1] < 2 and board[i][j] == 1):
                     changes.append((i,j))
                 elif(board[i][j] ==1 and (neighbours[1] == 2 or neighbours[1] == 3) ):
@@ -33,7 +32,6 @@ class Solution:
                 elif(board[i][j] == 0 and neighbours[1] == 3):
                     changes.append((i,j))
             
-        print(changes)
         for change in changes:
             row = change[0]
             col = change[1]
