@@ -4,7 +4,8 @@ class Solution:
         for index in range(len(s1)):
             if(s1[index] != s2[index]):
                 changes.append((s1[index], s2[index]))
-        
+            if(len(changes)>2):
+                return False
         
         if(len(changes) == 0):
             return True
