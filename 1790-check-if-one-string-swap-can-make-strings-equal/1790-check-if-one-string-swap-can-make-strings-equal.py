@@ -9,9 +9,8 @@ class Solution:
         
         if(len(changes) == 0):
             return True
-        elif(len(changes) == 2):   
-            if(changes[0][1] == changes[1][0] and changes[0][0] == changes[1][1]):
-                return True
+        elif(len(changes) == 2 and (changes[0][1] == changes[1][0] and changes[0][0] == changes[1][1])):   
+            return True
         return False
                 
  
