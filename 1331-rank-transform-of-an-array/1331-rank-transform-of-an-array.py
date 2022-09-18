@@ -8,7 +8,6 @@ class Solution:
         rankMap[indexList[0]] = 1
         for index in range(1,len(indexList)):
             rankMap[indexList[index]] = rankMap[indexList[index-1]]+1 if indexList[index] != indexList[index-1] else rankMap[indexList[index-1]]
-        print(rankMap)
         finalList = []
         for element in arr:
             finalList.append(rankMap[element]) 
