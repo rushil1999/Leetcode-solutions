@@ -13,11 +13,11 @@ class Solution:
                         stack.append((s[index], index))
                 else:
                     stack.append((s[index], index))
-        print(stack)
+        # print(stack)
         indicesSet = set([])
         for element in stack:
             indicesSet.add(element[1])
-        print(indicesSet)
+        # print(indicesSet)
         
         
         final = "".join([char for idx, char in enumerate(s) if idx not in indicesSet])
