@@ -16,15 +16,13 @@ class Solution:
     #     return final
     
     def subsets(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
         final = []
-        for num in nums:
-            aux = []
-            for element in final:
-                temp = element[:]
-                temp.append(num)
-                aux.append(temp)
-            final = final+ aux
-            final.append([num])
         
-        final.append([])
+        for i in range(2**n, 2**(n+1)):
+            
+            bitmask = bin(i)[3:]
+            print(i,bitmask, bin(i))
+            
+            final.append([nums[j] for j in range(n) if bitmask[j] == '1']) 
         return final
