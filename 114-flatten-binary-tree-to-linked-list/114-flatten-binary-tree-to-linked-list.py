@@ -20,9 +20,7 @@ class Solution:
             leftTail.right = rightHead
             rightTail.next = None
         elif(rightHead == None and leftHead != None):
-            # print("Here")
             node.right = leftHead
-            # leftHead.right = None
             rightTail = leftTail
         node.left = None
         
@@ -34,5 +32,16 @@ class Solution:
         Do not return anything, modify root in-place instead.
         """
         
-        self.helper(root)
+        prev=None
+        def rec(root):
+            if root == None:
+                return
+            nonlocal prev
+            rec(root.right)
+            rec(root.left)
+
+            root . right = prev
+            root . left = None
+            prev = root
+        rec(root)
         
