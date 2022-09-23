@@ -20,7 +20,7 @@ class Solution:
             leftTail.right = rightHead
             rightTail.next = None
         elif(rightHead == None and leftHead != None):
-            print("Here")
+            # print("Here")
             node.right = leftHead
             # leftHead.right = None
             rightTail = leftTail
