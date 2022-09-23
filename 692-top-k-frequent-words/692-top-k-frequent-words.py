@@ -8,7 +8,7 @@ class Solution:
 
         for word in wordMap:
             heapq.heappush(l1, ((-1*wordMap[word]), word))
-        print(list(l1))
+        # print(list(l1))
         final = []
         while(len(final) < k):
             top = heapq.heappop(l1)
