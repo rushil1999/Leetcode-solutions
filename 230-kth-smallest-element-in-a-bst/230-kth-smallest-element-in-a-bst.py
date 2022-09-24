@@ -6,21 +6,18 @@
 #         self.right = right
 class Solution:
     
-    def helper(self, node, heap):
+    def helper(self, node):
+        temp = []
         if(node == None):
-            return None
-        heapq.heappush(heap, node.val)
-        self.helper(node.left, heap)
-        self.helper(node.right, heap)
+            return []
+        left = self.helper(node.left)
+        temp = left
+        temp.append(node.val)
+        right = self.helper(node.right)
+        temp += right
+        return temp
         
     
     def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
-        l1 = []
-        heapq.heapify(l1)
-        self.helper(root, l1)
-        count = 0
-        top = 0
-        while(count < k):
-            top = heapq.heappop(l1)
-            count+=1
-        return top
+        return self.helper(root)[k-1]
+        
