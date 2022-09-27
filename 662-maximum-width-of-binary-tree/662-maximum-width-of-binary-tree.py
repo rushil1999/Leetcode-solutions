@@ -23,7 +23,6 @@ class Solution:
                     queue.append((node.left, 2*index))
                 if(node.right != None):
                     queue.append((node.right, (2*index)+1))
-            print(index, head)
             maxWidth = max(maxWidth, index - head+1)
         return maxWidth
             
