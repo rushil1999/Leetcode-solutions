@@ -15,8 +15,6 @@ class Solution:
         rightChildPathString = self.treeTraversal(node.right, visited)
         pathString += "(" + rightChildPathString + ")"
         
-        if(pathString in visited):
-            print(pathString, node)
         visited[pathString] = (node, 1) if pathString in visited else (node, 0)
         
         return pathString
@@ -25,7 +23,6 @@ class Solution:
         final = []
         visited = {}
         self.treeTraversal(root, visited)
-        # print(visited)
         for key in visited:
             if(visited[key][1] == 1):
                 final.append(visited[key][0])
