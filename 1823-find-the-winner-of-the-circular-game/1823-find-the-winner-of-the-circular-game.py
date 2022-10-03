@@ -3,7 +3,7 @@ class Solution:
         dp = []
         for num in range(1, n+1):
             dp.append(num)
-        print(dp)
+        # print(dp)
         index = 0
         while(len(dp) > 1):
             index = ((index+k-1)%len(dp))
