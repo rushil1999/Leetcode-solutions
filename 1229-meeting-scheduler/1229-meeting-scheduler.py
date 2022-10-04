@@ -10,7 +10,6 @@ class Solution:
                 startingVal = max(slots1[ptr1][0], slots2[ptr2][0])
                 d = slots1[ptr1][1] - startingVal
                 if(d >=duration):
-                    print("H 1")
                     return [startingVal, startingVal+duration]
                 ptr1 += 1
             elif(slots1[ptr1][1] <= slots2[ptr2][0]):
@@ -19,7 +18,6 @@ class Solution:
                 startingVal = max(slots1[ptr1][0], slots2[ptr2][0])
                 d = slots2[ptr2][1] - startingVal
                 if(d >=duration):
-                    print("H 2", d, slots2[ptr2][1], slots1[ptr1][0])
                     return [startingVal, startingVal+duration]
                 ptr2 += 1
             else:
