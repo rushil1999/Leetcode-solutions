@@ -1,10 +1,10 @@
 class Solution:
     def maxChunksToSorted(self, arr: List[int]) -> int:
         startingElement = 0
-        m = {}
+        m = set([])
         count = 0
         for index in range(len(arr)):
-            m[arr[index]] = True
+            m.add(arr[index])
             flag = False
             for j in range(startingElement, index+1):   
                 if(j not in m):
