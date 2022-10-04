@@ -7,13 +7,11 @@ class Solution:
         left, right = 0,len(tokens)-1
         maxScore = score = 0
         while(left<=right):
-            # print("here", left, tokens, tokens[0])
             while(left <len(tokens) and power >= tokens[left]):
                 power = power - tokens[left]
                 left +=1 
                 score += 1
                 maxScore = max(maxScore, score)
-            # print("Here 2")
             power += tokens[right]
             right-=1
             score-=1
