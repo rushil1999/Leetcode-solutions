@@ -12,7 +12,6 @@ class Solution:
         for index in range(len(height)-2, -1 ,-1):
             currentMaxHeight = max(currentMaxHeight, height[index])
             right[index] = currentMaxHeight
-        print(left, right)
         
         
         for index in range(len(height)):
