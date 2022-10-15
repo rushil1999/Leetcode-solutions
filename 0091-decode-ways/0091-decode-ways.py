@@ -1,27 +1,27 @@
 class Solution:
     def numDecodings(self, s: str) -> int:
-        dp = [(1,0)] if s[0] != "0" else [(0,0)]
-        for index in range(1,len(s)):
-            if(s[index-1] == "0" and s[index] != "0" ):
-                dp.append(((dp[-1][0]+dp[-1][1]), 0))
-                continue
-            elif(s[index-1]!="0" and s[index] == "0"):
-                if(s[index-1] == "1" or s[index-1] == "2"):
-                    dp.append((0, dp[-1][0]))
-                else:
-                    dp.append((0,0))
-                continue
-            elif(s[index-1] == "0" and s[index] == "0"):
-                dp.append((0,0))
-                continue
+        memo = {}
+        def recurse(index):
+            if(index == len(s)):
+                return 1
+            if(s[index] == "0"):
+                return 0
+            if(index == len(s)-1 ):
+                return 1
+            # print(index)
+            if(index in memo):
+                return memo[index]
+        
             
             
-            
-            num = int(s[index-1] + s[index])
-            if(num <= 26 ):
-                dp.append(((dp[-1][0]+dp[-1][1]), dp[-1][0]))
-            else:
-                dp.append(((dp[-1][0]+dp[-1][1]), 0))
-        val = dp[-1]
-        return val[0]+val[1]
+            num = int(s[index] + s[index+1])
+            val = recurse(index+1)
+            if(num <= 26):
+                val +=  recurse(index+2) 
+            memo[index] = val
+            return val
+        val = recurse(0)
+        # print(val)
+        return val
+        
             
