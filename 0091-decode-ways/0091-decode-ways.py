@@ -23,6 +23,5 @@ class Solution:
             else:
                 dp.append(((dp[-1][0]+dp[-1][1]), 0))
         val = dp[-1]
-        print(val)
         return val[0]+val[1]
             
