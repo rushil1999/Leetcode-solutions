@@ -3,7 +3,6 @@ class Solution:
         left, right = 0, len(height)-1
         maxArea = 0
         while(left<right):
-            print(left, right)
             minHeight = min(height[right], height[left])
             maxArea = max(maxArea, ((right-left))*minHeight)
             if(minHeight == height[left]):
