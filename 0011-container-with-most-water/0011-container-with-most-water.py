@@ -4,7 +4,7 @@ class Solution:
         maxArea = 0
         while(left<right):
             minHeight = min(height[right], height[left])
-            maxArea = max(maxArea, ((right-left))*minHeight)
+            maxArea = max(maxArea, ((right-left))*(min(height[right], height[left])))
             if(minHeight == height[left]):
                 left += 1
             else:
