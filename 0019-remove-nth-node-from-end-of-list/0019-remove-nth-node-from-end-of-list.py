@@ -18,7 +18,6 @@ class Solution:
             return [node, count]
         
         [root, count] = helper(head, 0)
-        print(count)
         if(count == n):
             return head.next
         return root
