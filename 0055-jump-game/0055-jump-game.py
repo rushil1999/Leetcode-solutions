@@ -6,5 +6,4 @@ class Solution:
             stepsTaken = max(dp[index-1][0], dp[index-1][1])-1
             stepsAvailable = nums[index] if stepsTaken >= 0 else 0
             dp.append([ stepsTaken, stepsAvailable])
-        print(dp)
         return True if dp[-1][0]>=0 else False
