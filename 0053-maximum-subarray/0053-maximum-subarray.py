@@ -7,7 +7,7 @@ class Solution:
             maxSum = max(maxSum, currentSum)
             i = len(nums)-1
             for i in range(pointer+1, len(nums)):
-                print(pointer, i, nums[i], currentSum)
+                # print(pointer, i, nums[i], currentSum)
                 if(currentSum + nums[i] < nums[i]):
                     maxSum = max(maxSum, currentSum)
                     currentSum = nums[i]
