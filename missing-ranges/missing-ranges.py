@@ -5,10 +5,8 @@ class Solution:
         for index in range(1, len(nums)):
             if(nums[index] - nums[index-1] > 1):
                 candidateRange = [nums[index-1]+1,nums[index]-1]
-                # print(candidateRange)
                 if(candidateRange[0] >= lower and candidateRange[0] <= upper):
                     intersection = [max(candidateRange[0], lower), min(candidateRange[1], upper)]
-                    print(intersection)
                     final.append(intersection)
         
         if(len(nums)> 0 and nums[len(nums)-1] < upper):
@@ -17,7 +15,6 @@ class Solution:
             final =[[lower, nums[0]-1]]+ final
         elif(len(nums) == 0):
             final.append([lower, upper])
-        print(final)
         for element in final:
             if(element[0] == element[1]):
                 ans.append(str(element[0]))
