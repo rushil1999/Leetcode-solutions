@@ -9,7 +9,6 @@ class Solution:
     def inorderSuccessor(self, root: TreeNode, p: TreeNode) -> Optional[TreeNode]:
         if(root== None):
             return None
-        leftSuccessor = rightSuccessor = None
         if(root.val > p.val):
             leftSuccessor = self.inorderSuccessor(root.left, p)
             return leftSuccessor if leftSuccessor!= None else root 
