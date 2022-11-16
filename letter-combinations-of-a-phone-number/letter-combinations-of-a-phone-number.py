@@ -1,6 +1,5 @@
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
-        print(digits)
         if(len(digits) == 0):
             return []
         
