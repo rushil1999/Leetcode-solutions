@@ -7,19 +7,12 @@
 
 class Solution:
     def inorderSuccessor(self, root: TreeNode, p: TreeNode) -> Optional[TreeNode]:
-        stack = [root]
-        currentMin = float('inf')
-        currentMinNode = None
-        while(len(stack) > 0):
-            node = stack[-1]
-            stack = stack[:-1]
-            if(node.val > p.val):
-                if(node.val < currentMin):
-                    currentMin = node.val
-                    currentMinNode = node
-            if(node.left != None):
-                stack.append(node.left)
-            if(node.right != None):
-                stack.append(node.right)
-        return currentMinNode
-                
+        if(root== None):
+            return None
+        leftSuccessor = rightSuccessor = None
+        if(root.val > p.val):
+            leftSuccessor = self.inorderSuccessor(root.left, p)
+            return leftSuccessor if leftSuccessor!= None else root 
+        elif(root.val <= p.val):
+            return self.inorderSuccessor(root.right, p)
+        
