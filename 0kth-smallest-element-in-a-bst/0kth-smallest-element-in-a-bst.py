@@ -5,6 +5,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    # Inorder traversal of BST gives a sorted array
     
     def helper(self, node):
         temp = []
