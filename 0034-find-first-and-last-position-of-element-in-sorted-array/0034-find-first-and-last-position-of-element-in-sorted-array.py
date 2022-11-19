@@ -1,33 +1,60 @@
 class Solution:
     def searchRange(self, nums: List[int], target: int) -> List[int]:
-        left = 0
-        right = len(nums)-1
-        foundFlag = False
-        while(left<=right):
-            mid = (left+right)//2
+        leftPtr, rightPtr = -1, -1
+        l = 0
+        r = len(nums)-1
+        found = False
+        foundIndex = -1
+        while(l <= r):
+            mid = (l+r)//2
             if(nums[mid] > target):
-                right = mid-1
+                r = mid-1
             elif(nums[mid] < target):
-                left = mid+1
+                l = mid+1
             else:
-                foundFlag = True
-                final = []
-                flag = False
-                for j in range(mid,-1, -1):
-                    if(nums[j]!= nums[mid]):
-                        final.append(j+1)
-                        flag = True
-                        break
-                if(flag == False):
-                    final.append(0)
-                flag = False    
-                for j in range(mid,len(nums)):
-                    if(nums[j]!= nums[mid]):
-                        final.append(j-1)
-                        flag = True
-                        break
-                if(flag == False):
-                    final.append(len(nums)-1)
-                    
+                foundIndex = mid
                 break
-        return final if foundFlag == True else [-1, -1]
+        if(foundIndex == -1):
+            return [leftPtr, rightPtr]
+        
+        
+        # print("Found Index", foundIndex)
+        leftPtr = rightPtr = foundIndex
+        # For left side
+        r = foundIndex - 1
+        l = 0
+        while(l<=r):
+            mid = (l+r)//2
+            if(nums[mid] != target):
+                l = mid+1
+            else:
+                if(mid-1>=0 and nums[mid-1]!= target):
+                    leftPtr = mid
+                    break
+                elif(mid-1 >= 0 and nums[mid-1] == target):
+                    r = mid-1
+                elif(mid-1 < 0):
+                    leftPtr = mid
+                    break
+        # print('left Pointer', leftPtr)
+                
+        # For right side
+        r = len(nums)-1
+        l = foundIndex+1
+        while(l<=r):
+            mid = (l+r)//2
+            if(nums[mid] != target):
+                r = mid-1
+            else:
+                if(mid+1 < len(nums) and nums[mid+1]!= target):
+                    rightPtr = mid
+                    break
+                elif(mid+1 < len(nums) and nums[mid+1] == target):
+                    l = mid+1
+                elif(mid + 1 >= len(nums)):
+                    rightPtr = mid
+                    break
+                    
+                    
+        return [leftPtr, rightPtr]
+            
