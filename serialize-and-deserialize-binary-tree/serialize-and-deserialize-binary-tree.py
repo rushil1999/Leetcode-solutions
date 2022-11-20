@@ -26,7 +26,6 @@ class Codec:
             queue.append(front.left)
             queue.append(front.right)
             
-        print(serialized)
         return serialized
             
             
@@ -50,7 +49,6 @@ class Codec:
             node = queue[0]
             queue = queue[1:len(queue)]
             if(data[i] != "#"):
-                print(data[i])
                 leftNode = TreeNode(int(data[i]))
                 node.left = leftNode
                 queue.append(leftNode)
