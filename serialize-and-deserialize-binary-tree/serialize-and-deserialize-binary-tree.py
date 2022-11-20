@@ -13,13 +13,23 @@ class Codec:
         :type root: TreeNode
         :rtype: str
         """
-        # preorder traversal
-        if(root == None):
-            return "#,"
-        serialized = str(root.val) + ","
-        serialized += self.serialize(root.left)
-        serialized += self.serialize(root.right)
+        # level order traversal
+        serialized = ""
+        queue = [root]
+        while(len(queue) > 0):
+            front = queue[0]
+            queue.pop(0)
+            if(front == None):
+                serialized += "#,"
+                continue
+            serialized += str(front.val)+","
+            queue.append(front.left)
+            queue.append(front.right)
+            
+        print(serialized)
         return serialized
+            
+            
         
 
     def deserialize(self, data):
@@ -28,18 +38,33 @@ class Codec:
         :type data: str
         :rtype: TreeNode
         """
-        def helper(data):
-            if(( data[0] == "#")):
-                data.pop(0)
-                return None
-            node = TreeNode(int(data[0]))
-            data.pop(0)
-            node.left = helper(data)
-            node.right = helper(data)
-            return node
         data = data.split(',')
-        node = helper(data)
-        return node
+        if(len(data) == 0):
+            return None
+        if(data[0]== "#"):
+            return None
+        root = TreeNode(int(data[0]))
+        queue = [root]
+        i = 1
+        while(len(queue) > 0 and i < len(data)):
+            node = queue[0]
+            queue = queue[1:len(queue)]
+            if(data[i] != "#"):
+                print(data[i])
+                leftNode = TreeNode(int(data[i]))
+                node.left = leftNode
+                queue.append(leftNode)
+            else:
+                node.left = None
+            i+= 1
+            if(data[i] != "#"):
+                rightNode = TreeNode(int(data[i]))
+                node.right = rightNode
+                queue.append(rightNode)
+            else:
+                node.right = None
+            i+= 1
+        return root
         
 
 # Your Codec object will be instantiated and called as such:
