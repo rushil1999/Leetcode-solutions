@@ -6,7 +6,6 @@ class Solution:
             val = carry + digits[i]
             carry = val//10
             finalArray[i+1] = val%10
-            print("fff", val%10)
         if(carry >0):
             finalArray[0] = carry
         else:
