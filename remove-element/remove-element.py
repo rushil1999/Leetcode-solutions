@@ -16,7 +16,6 @@ class Solution:
             slow+=1
             if(slow > fast):
                 fast = slow
-        print(nums)
         
         for i in range(len(nums)):
             if(nums[i] == -1 or nums[i] ==val):
