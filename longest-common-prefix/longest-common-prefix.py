@@ -4,8 +4,8 @@ class Solution:
         strIndex = 0
         index = 0
         finalIndex = -1
-        if(strs[0] == ""):
-            return ""
+        # if(strs[0] == ""):
+        #     return ""
         while(True):
             
             if(strIndex < numStr and index < len(strs[strIndex])):
