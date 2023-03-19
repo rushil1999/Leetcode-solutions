@@ -12,7 +12,6 @@ class Solution:
                 break
             if(direction == "up"):
                 while(i>=0 and j<m ):
-                    print("Direction up", i, j, mat[i][j])
                     ans.append(mat[i][j])
                     i-=1
                     j+=1
@@ -28,7 +27,6 @@ class Solution:
                 direction = "down"
             if(direction == "down"):
                 while(i<n and j>=0):
-                    print("Direction Down", i, j, mat[i][j])
                     ans.append(mat[i][j])
                     i+=1
                     j-=1
