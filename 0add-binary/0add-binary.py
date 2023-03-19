@@ -10,7 +10,6 @@ class Solution:
         
         val = ""
         carry = "0"
-        print(a,b)
         for i in range(len(a)-1, -1, -1):
             if((a[i] == "1" and b[i] =="0") or (a[i] == "0" and b[i] =="1")):
                 if(carry == "0"):
@@ -29,8 +28,6 @@ class Solution:
                     carry = "1"
                 else:
                     val = "1" + val
-            print(val)
-        print(val)
         if(carry == "1"):
             val = carry + val
         return val
