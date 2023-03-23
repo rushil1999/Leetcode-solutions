@@ -4,9 +4,7 @@ class Solution:
         arr = []
         i = 0
         while(i<len(s)):
-            print(i, s[i])
             if(s[i]!= ' '):
-                print(s[i])
                 start = i
                 found = False
                 for j in range(i,len(s)):
@@ -26,7 +24,6 @@ class Solution:
         finalStr = ""
         for i in range(len(arr)-1, -1, -1):
             finalStr += arr[i] + " "
-        print(finalStr)
         return finalStr[:-1]
                 
         
