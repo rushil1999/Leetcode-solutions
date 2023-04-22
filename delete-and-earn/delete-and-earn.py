@@ -8,7 +8,6 @@ class Solution:
         for key in list(count.keys()):
             arr.append((key, count[key]))
         arr.sort(key = lambda x: x[0])
-        print(arr)
         subSize = len(arr)
         dp = [[0]*2 for _ in range(subSize)]
         dp[0][0] = 0
@@ -21,7 +20,6 @@ class Solution:
                 dp[i][1] = currentVal * arr[i][1] + dp[i-1][0]
             else:
                 dp[i][1] = currentVal*arr[i][1] + dp[i][0]
-        print(dp)
         return max(dp[subSize-1][0], dp[subSize-1][1])
         
         
