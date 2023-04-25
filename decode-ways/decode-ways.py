@@ -23,7 +23,6 @@ class Solution:
                 child2 = recurse(val2)
             else:
                 child2 = 0
-            # print("Children", val1, child1, val2, child2)
             
             memo[val1] = child1
             memo[val2] = child2
@@ -34,7 +33,5 @@ class Solution:
             return memo[sr]
         
         ans = recurse(s)
-        print(memo)
-        # print(ans)
         return ans
             
