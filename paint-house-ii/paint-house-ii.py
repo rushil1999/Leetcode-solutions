@@ -40,10 +40,5 @@ class Solution:
                     
                 [minimumIndex, minimumIndex2] = self.getMinAndSecondMin(dp[i])
                 minIndex[i] = minimumIndex
-                minIndex2[i] = minimumIndex2
-            
-        print(dp)
-        print(minIndex, minIndex2)
-        
-        
+                minIndex2[i] = minimumIndex2        
         return dp[size-1][minIndex[size-1]]
