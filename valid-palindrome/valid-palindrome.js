@@ -15,7 +15,6 @@ var isPalindrome = function(s) {
         }
     })
     
-    console.log(parsedString)
     let left = 0
     let right = parsedString.length-1
     
