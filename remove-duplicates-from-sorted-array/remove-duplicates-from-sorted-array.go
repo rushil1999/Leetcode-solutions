@@ -15,7 +15,6 @@ func removeDuplicates(nums []int) int {
         }
         right += 1
     }
-    fmt.Println(nums)
     return count
     
 }
